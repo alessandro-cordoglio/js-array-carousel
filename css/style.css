@@ -16,7 +16,7 @@
 
 /* CLASSI DI UTILITà */
 .active{
-    display: block;
+    display: block !important;
 }
 
 /* FRECCETTE X SCORRERE IL CAROSELLO */
@@ -27,6 +27,7 @@
     margin: 10px 0;
     font-size: 25px;
     color: white;
+    z-index: 500;
 }
 .previous{
     top: 257px;
@@ -35,10 +36,11 @@
 /* STILE IMG */
 .item{
     height: 100%;
+    display: none;
+    position: relative;
 }
 .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
 }

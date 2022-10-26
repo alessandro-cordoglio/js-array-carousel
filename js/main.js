@@ -10,3 +10,7 @@ for (let i = 0; i < imgArray.length; i++) {
                  </div>`
     itemContainer.innerHTML += item //aggiungo i div descritti sopra all'interno del div container definito a inizio documento
 }
+
+//aggiungo la classe active al primo elemento
+const itemDiv = document.querySelector(".item")
+itemDiv.classList.add("active")
