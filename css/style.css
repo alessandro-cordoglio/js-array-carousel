@@ -14,6 +14,11 @@
     height: 300px;
 }
 
+/* CLASSI DI UTILITà */
+.active{
+    display: block;
+}
+
 /* FRECCETTE X SCORRERE IL CAROSELLO */
 .next, .previous{
     position: absolute;
@@ -35,4 +40,5 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: none;
 }
