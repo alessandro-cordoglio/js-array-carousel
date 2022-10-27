@@ -22,15 +22,24 @@ const btnPrev= document.getElementsByClassName("previous");
 
     let active = 0 //variabile di supporto per lo scorrimento del carosello
     btnNext[0].addEventListener("click", function(){
-        active+= 1;
+        document.querySelectorAll(".item")[active].classList.remove("active")
+        if (active===imgArray.lenght - 1) {
+            active=0
+        }else{
+            active++;
+        }
         document.querySelectorAll(".item")[active].classList.add("active")
-        document.querySelectorAll(".item")[active-1].classList.remove("active")
     })
 
     btnPrev[0].addEventListener("click", function(){
-            active= active - 1 ;
+            document.querySelectorAll(".item")[active].classList.remove("active")
+            if (active===0) {
+                active= imgArray.lenght -1
+            }else{
+                active--;
+            }
             document.querySelectorAll(".item")[active].classList.add("active")
-            document.querySelectorAll(".item")[active+1].classList.remove("active")
+            
     })
     
 
