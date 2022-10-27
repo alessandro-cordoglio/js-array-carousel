@@ -1,7 +1,7 @@
 "use strict";
 
 //creazione array di img da aggiungere nel carosello
-const imgArray=['/img/01.jpg', '/img/02.jpg', '/img/03.jpg', '/img/04.jpg', '/img/05.jpg']
+const imgArray=['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg']
 //variabili
 const itemContainer= document.querySelector("div.items");
 
@@ -20,15 +20,20 @@ document.querySelector(".item").classList.add("active")
 const btnNext= document.getElementsByClassName("next");
 const btnPrev= document.getElementsByClassName("previous");
 
-btnNext[0].addEventListener("click", function(){
-    let active = 0 //variabile di supporto per lo scorrimento del carosello
-    active+= 1;
-    document.querySelectorAll(".item")[active].classList.add("active")
-    document.querySelectorAll(".item")[active-1].classList.remove("active")
-})
-btnPrev[0].addEventListener("click", function(){
-    let active = 1 //variabile di supporto per lo scorrimento del carosello
-    active= active - 1 ;
-    document.querySelectorAll(".item")[active].classList.add("active")
-    document.querySelectorAll(".item")[active+1].classList.remove("active")
-})
+for (let active = 0; active < imgArray.length; active++) {
+    btnNext[0].addEventListener("click", function(){
+        let active = 0 //variabile di supporto per lo scorrimento del carosello
+        active+= 1;
+        document.querySelectorAll(".item")[active].classList.add("active")
+        document.querySelectorAll(".item")[active-1].classList.remove("active")
+    })
+    btnPrev[0].addEventListener("click", function(){
+            let active = 1 //variabile di supporto per lo scorrimento del carosello
+            active= active - 1 ;
+            document.querySelectorAll(".item")[active].classList.add("active")
+            document.querySelectorAll(".item")[active+1].classList.remove("active")
+    })
+    
+}
+
+  
