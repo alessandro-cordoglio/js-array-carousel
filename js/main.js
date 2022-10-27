@@ -1,7 +1,9 @@
+"use strict";
+
 //creazione array di img da aggiungere nel carosello
-const imgArray=[ '/img/01.jpg', '/img/02.jpg', '/img/03.jpg', '/img/04.jpg', '/img/05.jpg']
+const imgArray=['/img/01.jpg', '/img/02.jpg', '/img/03.jpg', '/img/04.jpg', '/img/05.jpg']
 //variabili
-const itemContainer= document.querySelector("div.items")
+const itemContainer= document.querySelector("div.items");
 
 //for statement per concatenare le img nei div
 for (let i = 0; i < imgArray.length; i++) {
@@ -12,5 +14,21 @@ for (let i = 0; i < imgArray.length; i++) {
 }
 
 //aggiungo la classe active al primo elemento
-const itemDiv = document.querySelector(".item")
-itemDiv.classList.add("active")
+document.querySelector(".item").classList.add("active")
+
+//azione on click per scorrere le img
+const btnNext= document.getElementsByClassName("next");
+const btnPrev= document.getElementsByClassName("previous");
+
+btnNext[0].addEventListener("click", function(){
+    let active = 0 //variabile di supporto per lo scorrimento del carosello
+    active+= 1;
+    document.querySelectorAll(".item")[active].classList.add("active")
+    document.querySelectorAll(".item")[active-1].classList.remove("active")
+})
+btnPrev[0].addEventListener("click", function(){
+    let active = 1 //variabile di supporto per lo scorrimento del carosello
+    active= active - 1 ;
+    document.querySelectorAll(".item")[active].classList.add("active")
+    document.querySelectorAll(".item")[active+1].classList.remove("active")
+})
